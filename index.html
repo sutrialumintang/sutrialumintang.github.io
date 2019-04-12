@@ -6,7 +6,7 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(file:///D|/PHOTO/WhatsApp%20Images/IMG-20180528-WA0065.jpg);
+	background-image: url('riri.jpg');
 }
 body,td,th {
 	color: #00FF00;
@@ -16,12 +16,12 @@ body,td,th {
 -->
 </style></head>
 
-<body>
+<body onload="typeWriter()">
 <div align="center">
   <table width="1010" border="1">
     <tr>
       <td width="1000" height="49"><div align="center" class="style2">
-        <p>SELAMAT DATANG DI BLOG SEDERHANA SAYA </p>
+        <p id="text-welcome"> </p>
         <p>RIRISS LUMINTANG </p>
       </div></td>
     </tr>
@@ -40,6 +40,19 @@ body,td,th {
     </tr>
   </table>
 </div>
-<p align="center">&nbsp;</p>
+
+   <script>    
+      var i = 0;
+      var txt = 'SELAMAT DATANG DI BLOG SEDERHANA SAYA';
+      var speed = 100;
+
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("text-welcome").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+    </script>
 </body>
 </html>
